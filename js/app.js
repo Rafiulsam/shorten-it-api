@@ -10,8 +10,8 @@ const loadLink = async searchText => {
             eyeBtn.classList.remove('d-none')
             inValidMsg.classList.add('d-none')
         }
-        else if(data.ok === false){
-             eyeBtn.classList.add('d-none')
+        else if (data.ok === false) {
+            eyeBtn.classList.add('d-none')
             inValidMsg.classList.remove('d-none')
             inValidMsg.innerHTML = `
                 <p>${data.error} </p>
@@ -42,15 +42,15 @@ const displayLink = link => {
     modalBody.innerHTML = `
             <div class= 'd-flex justify-content-between'>
             <p>Short link 1: <span id="link1">${link.result.full_short_link
-            }</span></p> <a type='button' onclick="copyLink('link1') " class='w-auto'> Copy link </a>
+        }</span></p> <a id='link-btn' type='button' onclick="copyLink('link1') " class='w-auto'> Copy link </a>
             </div>
             <div class= 'd-flex justify-content-between'>
-            <p> Short link 2: <span id="link1">${link.result.full_short_link2
-            }</span></p> <a type='button' onclick="copyLink('link2') "class='w-auto'> Copy link </a>
+            <p> Short link 2: <span id="link2">${link.result.full_short_link2
+        }</span></p> <a id='link-btn' type='button' onclick="copyLink('link2') "class='w-auto'> Copy link </a>
             </div>
             <div class= 'd-flex justify-content-between'>
-            <p> Short link 3: <span id="link1">${link.result.full_short_link3
-            }</span></p> <a type='button' onclick="copyLink('link3') "class='w-auto'> Copy link </a>
+            <p> Short link 3: <span id="link3">${link.result.full_short_link3
+        }</span></p> <a id='link-btn' type='button' onclick="copyLink('link3') "class='w-auto'> Copy link </a>
             </div>
     
     `
@@ -61,4 +61,4 @@ const copyLink = (linkId) => {
     navigator.clipboard.writeText(linkText).then(() => {
       alert('Link copied to clipboard!');
     });
-  };
+};
